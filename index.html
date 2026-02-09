@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>psanimes</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <header class="cabecalho">
+        <h1>Bem-vindo ao psanimes</h1>
+        <h2>Sua fonte definitiva para animes e mangás</h2>
+        
+        <nav class="link">
+            <ul>
+                <li><a href="#home">Início</a></li>
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="pages/contato.html">Contato</a></li>
+            </ul>
+        </nav>
+        
+    </header>
+
+    <main>
+        <div class="principal-content">
+            <section class="home-section" id="home">
+                <p>psanimes é uma plataforma dedicada aos fãs de anime e mangá.</p>
+                <p>Explore uma vasta coleção de animes e mangás.</p>
+                <input class="search-input" type="search" placeholder="Pesquisar animes ">
+            </section>
+
+            <section class="apresentation" id="about">
+                <h2>Sobre Nós</h2>
+                <p>No psanimes, nosso objetivo é fornecer aos fãs de anime e mangá um espaço onde possam descobrir, discutir e compartilhar suas paixões.</p>
+            </section>
+
+            <section class="card">
+               <div class="card1" onclick="abrirAnime('jujutsu')">
+                    <img src="./assets/jujutsu.webp" alt="Jujutsu Kaisen" class="anime-image">
+                    <h3>Jujutsu Kaisen</h3>
+               </div>
+
+               <div class="card1" onclick="abrirAnime('firefox')">
+                    <img src="./assets/firefox.webp" alt="Fire fox" class="anime-image">
+                    <h3>Fire fox</h3>
+               </div>
+
+                <div class="card1" onclick="abrirAnime('dinastia_da_espada')">
+                    <img src="./assets/dinastiadaespada.webp" alt="Dinastia da espada" class="anime-image">
+                    <h3>dinastia da espada</h3>
+                </div>
+
+                <div class="card1" onclick="abrirAnime('tales_of_herding_god')">
+                    <img src="./assets/tales_of_herding_god.webp" alt="Tales of herding god" class="anime-image">
+                    <h3>Tales of herding god</h3>
+
+                    
+                </div>
+                <div class="card1" onclick="abrirAnime('tomb_raider')">
+                    <img src="./assets/tomb_raider.jpg" alt="tomb raider" class="anime-image">
+                    <h3>tomb raider</h3>                
+                </div>
+                
+                <div class="card1" onclick="abrirAnime('chainsaw_man')">
+                    <img src="./assets/chainsaw_man.webp" alt="chainsaw Man" class="anime-image">
+                    <h3>Chainsaw Man</h3>
+                </div>
+                
+                <div class="card1" onclick="abrirAnime('baki_hanma')">
+                    <img src="./assets/baki_hanma.webp" alt="Baki Hanma" class="anime-image">
+                    <h3>Baki Hanma</h3>
+                </div>
+
+            </section>
+
+            <section class="card2">
+                
+                <div class="card3" onclick="abrirAnime('castevania')">
+                    <img src="./assets/castevania.webp" alt="castlevania" class="anime-image">
+                    <h3>castlevania</h3>
+                </div>
+
+                <div class="card3" onclick="abrirAnime('kaiju_no8')">
+                    <img src="./assets/kaiju_no8.jpg" alt="Kaiju No. 8" class="anime-image">   
+                    <h3>Kaiju No. 8</h3>
+                </div>
+                
+                <div class="card3" onclick="abrirAnime('claymore')">
+                    <img src="./assets/claymore.webp" alt="Claymore" class="anime-image">
+                    <h3>Claymore</h3>
+                </div>
+                
+                <div class="card3" onclick="abrirAnime('demon_slayer')">
+                    <img src="./assets/demon_slayer.webp" alt="Demon Slayer" class="anime-image">
+                    <h3>Demon Slayer</h3>
+                </div>
+                
+                <div class="card3" onclick="abrirAnime('o_exterminador_do_futuro')">
+                    <img src="./assets/o_exterminador_do_futuro.webp" alt="O Exterminador do Futuro" class="anime-image">
+                    <h3>o Exterminador do Futuro</h3>
+                </div>
+                
+                <div class="card3" onclick="abrirAnime('ajin')">
+                    <img src="./assets/ajin.webp" alt="Ajin" class="anime-image">
+                    <h3>ajin</h3>
+                </div>
+                <div class="card3" onclick="abrirAnime('noblesse')">
+                    <img src="./assets/noblesse.jpg" alt="Noblesse" class="anime-image">
+                    <h3>Noblesse</h3>
+                    
+                </div>
+                
+            </section>
+            
+            <iframe id="player" width="80%" height="500" frameborder="0" allowfullscreen></iframe>
+            
+        </div>
+           
+                
+    </main>
+
+    <footer class="direct">
+        <p>&copy; 2024 psanimes. Todos os direitos reservados.</p>
+    </footer>
+       
+</body>
+<script src="./scripts.js"></script>
+</html>
