@@ -270,7 +270,41 @@ div.cards{
     border-radius: 5px;
     padding: 10px;
     text-align: center;
-}    
+} 
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.pagination ul {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.pagination li {
+    display: inline-block;
+}
+
+.pagination a {
+    display: block;
+    padding: 8px 15px;
+    background-color: #007BFF;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.pagination a:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
 
 /* Tablets */
 @media (max-width: 1024px) {
@@ -308,6 +342,15 @@ div.cards{
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
+}
+
+
+
+
+ h3 {
+    color: #fff;
+    font-size: clamp(1rem, 0.6vw, 1.4rem);
+    margin: 20px 40px;
 }
 
 /* Mobile landscape e tablets pequenos */

@@ -1,6 +1,6 @@
 
  
-
+const searchInput = document.querySelector(".search-input");
 const animes = {
     naruto: "https://playerflixapi.com/serie/289422",
     onepiece: "https://playerflixapi.com/serie/97582CE",
@@ -18,7 +18,9 @@ const animes = {
     demon_slayer: "https://playerflixapi.com/serie/85937",
     o_exterminador_do_futuro: "https://playerflixapi.com/serie/239287",
     ajin: "khttps://playerflixapi.com/serie/65292",
-    noblesse: "https://playerflixapi.com/serie/122870" 
+    noblesse: "https://playerflixapi.com/serie/122870",
+    rakshasa: "https://playerflixapi.com/serie/122870",
+    wan_jie_xian_zong: "https://playerflixapi.com/serie/122870" 
 };
 
 function abrirAnime(anime) {
@@ -37,3 +39,50 @@ function carregarAnimeDoUrl() {
 }
 
 document.addEventListener("DOMContentLoaded", carregarAnimeDoUrl);
+
+function pesquisarAnime() {
+    const query = searchInput.value.toLowerCase().trim();
+    
+    if (!query) {
+        alert("Digite o nome de um anime para pesquisar!");
+        return;
+    }
+    
+    // Busca exata primeiro
+    if (animes[query]) {
+        window.location.href = `pages/vidio.html?anime=${encodeURIComponent(query)}`;
+        return;
+    }
+    
+    // Busca com normalização de espaços e underscores
+    const queryNormalizado = query.replace(/\s+/g, '_');
+    if (animes[queryNormalizado]) {
+        window.location.href = `pages/vidio.html?anime=${encodeURIComponent(queryNormalizado)}`;
+        return;
+    }
+    
+    // Busca parcial - encontra animes que contêm a palavra-chave
+    const chaveEncontrada = Object.keys(animes).find(chave => 
+        chave.includes(queryNormalizado) || queryNormalizado.includes(chave)
+    );
+    
+    if (chaveEncontrada) {
+        window.location.href = `pages/vidio.html?anime=${encodeURIComponent(chaveEncontrada)}`;
+        return;
+    }
+    
+    // Se nada foi encontrado
+    const animesDisponiveis = Object.keys(animes).join(", ");
+    alert(`Anime não encontrado!\n\nAnimes disponíveis:\n${animesDisponiveis}`);
+}
+
+// Permitir pesquisa ao pressionar Enter
+if (searchInput) {
+    searchInput.addEventListener("keypress", event => {
+        if (event.key === "Enter") {
+            pesquisarAnime();
+        }
+    });
+}
+  
+
