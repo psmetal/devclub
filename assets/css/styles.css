@@ -77,6 +77,7 @@ a:hover {
     height: 400px;
     gap: 20px;
     cursor: pointer;
+    position: relative;
 }
 .card3 {
     display: flex;
@@ -90,6 +91,7 @@ a:hover {
     cursor: pointer;
     width: 26vh;
     height: 50vh;
+    position: relative;
 }
 .card2 {
     display: flex;
@@ -200,6 +202,7 @@ a:hover {
     flex-direction: column;
     
 }
+
 .apresentation h2, .apresentation   p {
     max-width: 70%;
     font-size: clamp(1rem, 2.5vw, 1.7rem);
@@ -291,7 +294,8 @@ div.cards{
     display: inline-block;
 }
 
-.pagination a {
+.pagination a,
+.pagination span {
     display: block;
     padding: 8px 15px;
     background-color: #007BFF;
@@ -299,12 +303,140 @@ div.cards{
     border-radius: 5px;
     text-decoration: none;
     transition: all 0.3s ease;
+    min-width: 44px;
+    text-align: center;
+}
+.pagination .is-active a {
+    background-color: #0056b3;
+    pointer-events: none;
+}
+
+.pagination .is-disabled span {
+    background-color: #2b2b2b;
+    color: #777;
+    cursor: not-allowed;
+}
+.pagination .dots span {
+    background-color: transparent;
+    color: #aaa;
+    padding: 8px 6px;
 }
 
 .pagination a:hover {
     background-color: #0056b3;
     transform: scale(1.05);
 }
+.ano-title {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1;
+   
+
+    
+}
+#formComentario {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 80%;
+  margin: 40px ;
+}
+#formComentario label {
+  font-weight: bold;
+  margin-bottom: 4px;
+  color:white;
+  font-size:  clamp(1.2rem, 2.5vw, 2.0rem);
+}
+
+#formComentario input,
+#formComentario textarea,
+#formComentario select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+    background-color: #111214;
+    color: #fff;
+}
+#formComentario select {
+    appearance: none;
+    background-image: linear-gradient(45deg, transparent 50%, #fff 50%),
+        linear-gradient(135deg, #fff 50%, transparent 50%);
+    background-position: calc(100% - 18px) calc(1em + 2px),
+        calc(100% - 13px) calc(1em + 2px);
+    background-size: 6px 6px, 6px 6px;
+    background-repeat: no-repeat;
+    padding-right: 36px;
+}
+.coment_h2 {
+    
+    
+    color: #fff;
+    font-size: clamp(1.2rem, 2.5vw, 2.0rem);
+    margin: 20px 40px;
+}
+
+#formComentario button {
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+#formComentario button:hover {
+  background-color: #0056b3;
+}
+
+#comentarios-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 10px 40px 30px;
+}
+
+.comentario {
+    display: flex;
+    gap: 12px;
+    padding: 12px;
+    border: 1px solid #2d2d2d;
+    border-radius: 6px;
+    background-color: #111214;
+    color: #fff;
+    align-items: flex-start;
+}
+
+.comentario-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #1c2b3a;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    flex: 0 0 36px;
+}
+
+.comentario-body {
+    flex: 1;
+}
+
+.comentario-meta {
+    opacity: 0.85;
+    margin-bottom: 6px;
+}
+
 
 /* Tablets */
 @media (max-width: 1024px) {

@@ -2,9 +2,7 @@
  
 const searchInput = document.querySelector(".search-input");
 const animes = {
-    naruto: "https://playerflixapi.com/serie/289422",
-    onepiece: "https://playerflixapi.com/serie/97582CE",
-    bleach: "https://playerflixapi.com/serie/BLEACH_LINK",
+    
     jujutsu: "https://playerflixapi.com/serie/95479",
     firefox: "https://playerflixapi.com/serie/88046",
     dinastia_da_espada: "https://playerflixapi.com/serie/79594",
@@ -17,22 +15,31 @@ const animes = {
     claymore: "https://playerflixapi.com/serie/34791",
     demon_slayer: "https://playerflixapi.com/serie/85937",
     o_exterminador_do_futuro: "https://playerflixapi.com/serie/239287",
-    ajin: "khttps://playerflixapi.com/serie/65292",
+    ajin: "https://playerflixapi.com/serie/65292",
     noblesse: "https://playerflixapi.com/serie/122870",
     rakshasa: "https://playerflixapi.com/serie/122870",
-    wan_jie_xian_zong: "https://playerflixapi.com/serie/122870" 
+    wan_jie_xian_zong: "https://playerflixapi.com/serie/122870",
+    solo_leveling: "https://playerflixapi.com/serie/122870",
+    devil_may_cry: "https://playerflixapi.com/serie/122870",
+    super_cubo: "https://playerflixapi.com/serie/122870",
+    jujutsu_kaisen: "https://playerflixapi.com/serie/122870",   
+    dragon_raja: "https://playerflixapi.com/serie/122870",
+    one_piece: "https://playerflixapi.com/serie/37854", 
 };
+
+const isPagesDir = window.location.pathname.replace(/\\/g, "/").includes("/pages/");
+const videoPage = isPagesDir ? "vidio.html" : "pages/vidio.html";
 
 function abrirAnime(anime) {
     if (anime && animes[anime]) {
-        window.location.href = `pages/vidio.html?anime=${encodeURIComponent(anime)}`;
+        window.location.href = `${videoPage}?anime=${encodeURIComponent(anime)}`;
     }
 }
 
 function carregarAnimeDoUrl() {
     const params = new URLSearchParams(window.location.search);
     const anime = params.get("anime");
-    
+
     if (anime && animes[anime]) {
         document.getElementById("player").src = animes[anime];
     }
@@ -43,21 +50,24 @@ document.addEventListener("DOMContentLoaded", carregarAnimeDoUrl);
 function pesquisarAnime() {
     const query = searchInput.value.toLowerCase().trim();
     
-    if (!query) {
-        alert("Digite o nome de um anime para pesquisar!");
-        return;
-    }
-    
-    // Busca exata primeiro
     if (animes[query]) {
-        window.location.href = `pages/vidio.html?anime=${encodeURIComponent(query)}`;
-        return;
-    }
-    
+    window.location.href = `${videoPage}?anime=${encodeURIComponent(query)}`;
+    return;
+}
+
+if (animes[queryNormalizado]) {
+    window.location.href = `${videoPage}?anime=${encodeURIComponent(queryNormalizado)}`;
+    return;
+}
+
+if (chaveEncontrada) {
+    window.location.href = `${videoPage}?anime=${encodeURIComponent(chaveEncontrada)}`;
+    return;
+}
     // Busca com normalização de espaços e underscores
     const queryNormalizado = query.replace(/\s+/g, '_');
     if (animes[queryNormalizado]) {
-        window.location.href = `pages/vidio.html?anime=${encodeURIComponent(queryNormalizado)}`;
+        window.location.href = `${videoPage}?anime=${encodeURIComponent(queryNormalizado)}`;
         return;
     }
     
@@ -67,7 +77,7 @@ function pesquisarAnime() {
     );
     
     if (chaveEncontrada) {
-        window.location.href = `pages/vidio.html?anime=${encodeURIComponent(chaveEncontrada)}`;
+        window.location.href = `${videoPage}?anime=${encodeURIComponent(chaveEncontrada)}`;
         return;
     }
     
@@ -84,5 +94,57 @@ if (searchInput) {
         }
     });
 }
-  
+
+const form = document.getElementById('formComentario');
+const sucessoMsg = document.getElementById('sucessoMsg');
+const comentariosSection = document.getElementById('comentarios');
+
+if (form && sucessoMsg && comentariosSection) {
+    let comentariosList = document.getElementById('comentarios-list');
+    if (!comentariosList) {
+        comentariosList = document.createElement('div');
+        comentariosList.id = 'comentarios-list';
+        comentariosSection.appendChild(comentariosList);
+    }
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+    // Simples validação
+    const nome = form.nome.value.trim();
+    const email = form.email.value.trim();
+    const msg = form.mensagem.value.trim();
+
+    if (!nome || !email || !msg) {
+      alert('Por favor preencha todos os campos obrigatórios.');
+      return;
+    }
+
+    // Aqui você enviaria o comentário para o servidor
+    // Por enquanto mostramos mensagem de sucesso:
+        const comentario = document.createElement('div');
+        comentario.classList.add('comentario');
+
+        const data = new Date().toLocaleString("pt-BR");
+        const inicial = nome.charAt(0).toUpperCase() || "?";
+
+        comentario.innerHTML = `
+            <div class="comentario-avatar" aria-hidden="true">${inicial}</div>
+            <div class="comentario-body">
+                <p class="comentario-meta"><strong>${nome}</strong> (${email}) - ${data}</p>
+                <p>${msg}</p>
+            </div>
+        `;
+
+        comentariosList.prepend(comentario);
+        sucessoMsg.style.display = 'block';
+        form.reset();
+        setTimeout(() => {
+            sucessoMsg.style.display = 'none';
+        }, 3000);
+    });
+}
+
+
+
 

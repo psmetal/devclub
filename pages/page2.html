@@ -1,45 +1,19 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>psanimes</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <title>Lista de Animes</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
 <body>
-    <header class="cabecalho">
-        <h1>Bem-vindo ao psanimes</h1>
-        <h2>Sua fonte definitiva para animes e mangás</h2>
-        
-        <nav class="link">
-            <ul>
-                <li><a href="#home">Início</a></li>
-                <li><a href="#about">Sobre</a></li>
-                <li><a href="pages/contato.html">Contato</a></li>
-            </ul>
-        </nav>
-        
-    </header>
-
-    <main>
-        <div class="principal-content">
-            <section class="home-section" id="home">
-                <p>psanimes é uma plataforma dedicada aos fãs de anime e mangá.</p>
-                <p>Explore uma vasta coleção de animes e mangás.</p>
-                <input  class="search-input" type="search" placeholder="Pesquisar animes ">
-                
-            </section>
-
-            <section class="apresentation" id="about">
-                <h2>Sobre Nós</h2>
-                <p>No psanimes, nosso objetivo é fornecer aos fãs de anime e mangá um espaço onde possam descobrir, discutir e compartilhar suas paixões.</p>
-            </section>
-
-            <section class="card">
-               <div class="card1" onclick="abrirAnime('jujutsu')">
-                    <img src="./assets/jujutsu.webp" alt="Jujutsu Kaisen" class="anime-image">
-                    <span class="ano-title">2020</span>
-                    <h3>Jujutsu Kaisen</h3>
+    <h1 class="title">Lista de Animes</h1>
+      <section class="card">
+            
+               <div class="card1" onclick="abrirAnime('one_piece')">
+                    <img src="../assets/one_piece.jpg" alt="One Piece" class="anime-image">
+                    <span class="ano-title">1999</span>
+                    <h3>One Piece</h3>
                </div>
 
                <div class="card1" onclick="abrirAnime('firefox')">
@@ -127,72 +101,15 @@
                 </div>
                 
             </section>
-             <section class="card2">
-                
-                <div class="card3" onclick="abrirAnime('rakshasa')">
-                    <img src="./assets/rakshasa_street.webp" alt="rakshasa" class="anime-image">
-                        <span class="ano-title">2017</span>
-                    <h3>Rakshasa street</h3>
-                </div>
-
-                <div class="card3" onclick="abrirAnime('wan_jie_xian_zong')">
-                    <img src="./assets/wan_jie_xian_zong.webp" alt="Wan Jie Xian Zong" class="anime-image">
-                        <span class="ano-title">2018</span>   
-                    <h3>Wan Jie Xian Zong  </h3>
-                </div>
-                
-                <div class="card3" onclick="abrirAnime('solo_leveling')">
-                    <img src="./assets/solo_leveling.webp" alt="Solo Leveling" class="anime-image">
-                        <span class="ano-title">2024</span>
-                    <h3>Solo Leveling</h3>
-                </div>
-                
-                <div class="card3" onclick="abrirAnime('devil_may_cry')">
-                    <img src="./assets/devil_may_cry.webp" alt="Devil May Cry" class="anime-image">
-                        <span class="ano-title">2025</span>
-                    <h3>Devil May Cry</h3>
-                </div>
-                
-                <div class="card3" onclick="abrirAnime('super_cubo')">
-                    <img src="./assets/super_cubo.webp" alt="Super Cubo" class="anime-image">
-                        <span class="ano-title">2025</span>
-                    <h3>Super Cubo</h3>
-                </div>
-                
-                <div class="card3" onclick="abrirAnime('jujutsu_kaisen')">
-                    <img src="./assets/jujutsu_kaisen.webp" alt="Jujutsu Kaisen" class="anime-image">
-                        <span class="ano-title">2020</span>
-                    <h3>Jujutsu Kaisen</h3>
-                </div>
-                <div class="card3" onclick="abrirAnime('dragon_raja')">
-                    <img src="./assets/dragon_raja.webp" alt="Dragon Raja" class="anime-image">
-                        <span class="ano-title">2022</span>
-                    <h3>Dragon Raja</h3>
-                    
-                </div>
-                
-            </section >
-             <nav class="pagination">
+            <nav class="pagination">
             <ul>
-                <li class="is-disabled"><span>Anterior</span></li>
-                <li class="is-active"><a href="index.html">1</a></li>
-                <li><a href="pages/page2.html">2</a></li>
+                <li><a href="../index.html">Anterior</a></li>
+                <li><a href="../index.html">1</a></li>
+                <li class="is-active"><a href="page2.html">2</a></li>
                 <li class="dots"><span>...</span></li>
-                <li><a href="pages/page2.html">Proxima</a></li>
+                <li class="is-disabled"><span>Proxima</span></li>
             </ul>
             </nav>
-                        
-                    
-            
-        </div>
-       
-                
-    </main>
-
-    <footer class="direct">
-        <p>&copy; 2024 psanimes. Todos os direitos reservados.</p>
-    </footer>
-       
 </body>
-<script src="./scripts.js"></script>
+<script src="../scripts.js"></script>
 </html>
