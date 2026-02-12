@@ -24,7 +24,10 @@ const animes = {
     super_cubo: "https://playerflixapi.com/serie/122870",
     jujutsu_kaisen: "https://playerflixapi.com/serie/122870",   
     dragon_raja: "https://playerflixapi.com/serie/122870",
-    one_piece: "https://playerflixapi.com/serie/37854", 
+    one_piece: "https://playerflixapi.com/serie/37854",
+    rurouni_kenshin: "https://playerflixapi.com/serie/210879",
+    sakamoto_days: "https://playerflixapi.com/serie/210879",
+    dr_stone: "https://playerflixapi.com/serie/210879", 
 };
 
 const isPagesDir = window.location.pathname.replace(/\\/g, "/").includes("/pages/");
