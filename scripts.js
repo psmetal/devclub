@@ -38,6 +38,10 @@ const animes = {
     mushoku_tensei: "https://playerflixapi.com/serie/94664",
     one_punch_man: "https://playerflixapi.com/serie/63926",
     dota_dragons_blood: "https://playerflixapi.com/serie/118956",
+    the_king_avatar: "https://playerflixapi.com/serie/60833",
+    attack_on_titan: "https://playerflixapi.com/serie/1429",
+    chains_of_lust: "https://playerflixapi.com/serie/125794",
+    arifureta: "https://playerflixapi.com/serie/125794"
 };
 
 const isPagesDir = window.location.pathname.replace(/\\/g, "/").includes("/pages/");
