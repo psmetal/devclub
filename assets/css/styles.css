@@ -613,7 +613,7 @@ h3 {
     }
     
     .search-input {
-        width: 85%;
+        width: 60%;
         max-width: 500px;
         margin: 15px auto;
         padding: 10px 12px 10px 40px;
@@ -630,6 +630,7 @@ h3 {
     .search-btn {
         padding: 8px 15px;
         font-size: 14px;
+        width: 60%;
     }
     
     .home-section, .apresentation {
@@ -723,16 +724,14 @@ h3 {
     .search-container {
         flex-direction: column;
         gap: 5px;
-        width: 95%;
+        width: 75%;
         max-width: 100%;
     }
     
-    .search-input {
-        width: 100%;
-    }
+    
     
     .search-btn {
-        width: 100%;
+        width: 60%;
         padding: 10px 15px;
     }
     
@@ -801,9 +800,14 @@ h3 {
     }
     
     .search-input {
-        width: 95%;
+        width: 50%;
         font-size: 12px;
         height: 36px;
+    }
+    .search-btn {
+        width: 50%;
+        padding: 8px 12px;
+        font-size: 12px;
     }
     
     .card1, .card3 {
