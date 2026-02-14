@@ -287,11 +287,24 @@ a:hover {
     color: #fff;
 }
 .home-section p, .apresentation h2, .apresentation p {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     max-width: 85%;
     font-size: clamp(1rem, 2.5vw, 1.7rem);
     margin-left: auto;
     margin-right: auto;
+    color: white;
 } 
+.search-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+    flex-wrap: wrap;
+}
 .background-image {
     
     margin: 20px 20px;

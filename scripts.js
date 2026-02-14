@@ -37,6 +37,7 @@ const animes = {
     mashle_magia_musculo: "https://playerflixapi.com/serie/204832",
     mushoku_tensei: "https://playerflixapi.com/serie/94664",
     one_punch_man: "https://playerflixapi.com/serie/63926",
+    dota_dragons_blood: "https://playerflixapi.com/serie/118956",
 };
 
 const isPagesDir = window.location.pathname.replace(/\\/g, "/").includes("/pages/");
