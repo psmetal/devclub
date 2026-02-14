@@ -27,7 +27,16 @@ const animes = {
     one_piece: "https://playerflixapi.com/serie/37854",
     rurouni_kenshin: "https://playerflixapi.com/serie/210879",
     sakamoto_days: "https://playerflixapi.com/serie/210879",
-    dr_stone: "https://playerflixapi.com/serie/210879", 
+    dr_stone: "https://playerflixapi.com/serie/210879",
+    bleach: "https://playerflixapi.com/serie/30984",
+    my_hero_academia: "https://playerflixapi.com/serie/65930",
+    teogonia: "https://playerflixapi.com/serie/256109",
+    afro_samurai: "https://playerflixapi.com/serie/19544",
+    tougen_anki: "https://playerflixapi.com/serie/253811",
+    nija_kamui: "https://playerflixapi.com/serie/202284",
+    mashle_magia_musculo: "https://playerflixapi.com/serie/204832",
+    mushoku_tensei: "https://playerflixapi.com/serie/94664",
+    one_punch_man: "https://playerflixapi.com/serie/63926",
 };
 
 const isPagesDir = window.location.pathname.replace(/\\/g, "/").includes("/pages/");
