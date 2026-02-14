@@ -40,7 +40,7 @@ const animes = {
     dota_dragons_blood: "https://playerflixapi.com/serie/118956",
     the_king_avatar: "https://playerflixapi.com/serie/60833",
     attack_on_titan: "https://playerflixapi.com/serie/1429",
-    chains_of_lust: "https://playerflixapi.com/serie/125794",
+    cyberpunk: "https://playerflixapi.com/serie/105248",
     arifureta: "https://playerflixapi.com/serie/125794"
 };
 
