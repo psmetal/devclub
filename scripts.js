@@ -27,7 +27,7 @@ const animes = {
     one_piece: "https://playerflixapi.com/serie/37854",
     rurouni_kenshin: "https://playerflixapi.com/serie/210879",
     sakamoto_days: "https://playerflixapi.com/serie/210879",
-    dr_stone: "https://playerflixapi.com/serie/210879",
+    dr_stone: "https://playerflixapi.com/serie/86031",
     bleach: "https://playerflixapi.com/serie/30984",
     my_hero_academia: "https://playerflixapi.com/serie/65930",
     teogonia: "https://playerflixapi.com/serie/256109",
