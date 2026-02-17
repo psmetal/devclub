@@ -755,7 +755,7 @@ h3 {
     }
     
     .card, .card2 {
-        width: 100%;
+        width: 80%;
         padding: 10px;
         gap: 10px;
         flex-direction: column;
