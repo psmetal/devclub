@@ -414,9 +414,13 @@ div.cards{
 #formComentario {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+    gap: 14px;
   max-width: 90%;
   margin: 20px auto;
+    padding: 16px;
+    border: 1px solid #2d2d2d;
+    border-radius: 10px;
+    background-color: #111214;
 }
 #formComentario label {
   font-weight: bold;
@@ -428,11 +432,23 @@ div.cards{
 #formComentario input,
 #formComentario textarea,
 #formComentario select {
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+    padding: 10px 12px;
+    border: 1px solid #3a3a3a;
+    border-radius: 8px;
     background-color: #111214;
     color: #fff;
+}
+
+#formComentario textarea {
+        font-size: clamp(1rem, 2vw, 1.15rem);
+}
+
+#formComentario input:focus,
+#formComentario textarea:focus,
+#formComentario select:focus {
+        outline: none;
+        border-color: #007BFF;
+        box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.18);
 }
 #formComentario select {
     appearance: none;
@@ -459,30 +475,32 @@ div.cards{
   background-color: #007bff;
   color: #fff;
   border: none;
-  border-radius: 5px;
+    border-radius: 8px;
   cursor: pointer;
   font-weight: bold;
   margin-bottom: 30px;
+    transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
 #formComentario button:hover {
   background-color: #0056b3;
+    transform: translateY(-1px);
 }
 
 #comentarios-list {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 14px;
     margin: 10px auto 30px;
     max-width: 90%;
 }
 
 .comentario {
     display: flex;
-    gap: 12px;
-    padding: 12px;
+    gap: 14px;
+    padding: 14px;
     border: 1px solid #2d2d2d;
-    border-radius: 6px;
+    border-radius: 10px;
     background-color: #111214;
     color: #fff;
     align-items: flex-start;
@@ -493,16 +511,16 @@ div.cards{
 }
 
 .comentario-avatar {
-    width: 36px;
-    height: 36px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
-    background-color: #1c2b3a;
+    background-color: #007BFF;
     color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: bold;
-    flex: 0 0 36px;
+    flex: 0 0 40px;
 }
 
 .comentario-body {
@@ -510,8 +528,15 @@ div.cards{
 }
 
 .comentario-meta {
-    opacity: 0.85;
+    opacity: 0.9;
     margin-bottom: 6px;
+    font-size: clamp(0.82rem, 1.6vw, 0.95rem);
+}
+
+.comentario-avaliacao {
+    margin-bottom: 6px;
+    color: #ffd166;
+    font-size: clamp(0.9rem, 1.8vw, 1rem);
 }
 
 
@@ -555,6 +580,7 @@ div.cards{
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 
@@ -767,7 +793,10 @@ h3 {
     }
     
     #player {
-        height: 220px;
+        width: 100%;
+        height: 250px;
+        margin: 20px 0;
+        aspect-ratio: 16 / 9;
     }
     
     .link a {

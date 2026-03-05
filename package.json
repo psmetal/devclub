@@ -1,0 +1,30 @@
+{
+  "name": "devclub",
+  "version": "1.0.0",
+  "description": "",
+  "main": "scripts.js",
+  "scripts": {
+    "dev": "node --watch server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/psmetal/devclub.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/psmetal/devclub/issues"
+  },
+  "homepage": "https://github.com/psmetal/devclub#readme",
+  "devDependencies": {
+    "dotenv": "^17.3.1",
+    "prisma": "^6.19.2"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.19.2",
+    "cors": "^2.8.6",
+    "express": "^5.2.1"
+  }
+}

@@ -115,6 +115,9 @@ if (searchInput) {
 const form = document.getElementById('formComentario');
 const sucessoMsg = document.getElementById('sucessoMsg');
 const comentariosSection = document.getElementById('comentarios');
+const apiBaseUrl = window.location.port && window.location.port !== '3000'
+    ? 'http://localhost:3000'
+    : '';
 
 if (form && sucessoMsg && comentariosSection) {
     let comentariosList = document.getElementById('comentarios-list');
@@ -124,7 +127,49 @@ if (form && sucessoMsg && comentariosSection) {
         comentariosSection.appendChild(comentariosList);
     }
 
-    form.addEventListener('submit', function (e) {
+    function renderizarComentario(comment) {
+        const comentario = document.createElement('div');
+        comentario.classList.add('comentario');
+
+        const data = comment.createdAt
+            ? new Date(comment.createdAt).toLocaleString('pt-BR')
+            : new Date().toLocaleString('pt-BR');
+        const inicial = comment.name?.charAt(0).toUpperCase() || '?';
+        const nota = Number(comment.avaliacao);
+        const estrelas = Number.isInteger(nota) && nota > 0
+            ? '⭐'.repeat(nota)
+            : '';
+
+        comentario.innerHTML = `
+            <div class="comentario-avatar" aria-hidden="true">${inicial}</div>
+            <div class="comentario-body">
+                <p class="comentario-meta"><strong>${comment.name}</strong> (${comment.email}) - ${data}</p>
+                ${estrelas ? `<p class="comentario-avaliacao">Avaliação: ${estrelas}</p>` : ''}
+                <p>${comment.comentario}</p>
+            </div>
+        `;
+
+        comentariosList.prepend(comentario);
+    }
+
+    async function carregarComentarios() {
+        try {
+            const response = await fetch(`${apiBaseUrl}/api/comments`);
+            if (!response.ok) {
+                return;
+            }
+
+            const comments = await response.json();
+            comentariosList.innerHTML = '';
+            comments.forEach(renderizarComentario);
+        } catch (error) {
+            console.error('Erro ao carregar comentários:', error);
+        }
+    }
+
+    carregarComentarios();
+
+    form.addEventListener('submit', async function (e) {
         e.preventDefault();
 
     // Simples validação
@@ -137,28 +182,38 @@ if (form && sucessoMsg && comentariosSection) {
       return;
     }
 
-    // Aqui você enviaria o comentário para o servidor
-    // Por enquanto mostramos mensagem de sucesso:
-        const comentario = document.createElement('div');
-        comentario.classList.add('comentario');
+        const avaliacaoValue = form.avaliacao?.value;
+        const avaliacao = avaliacaoValue ? Number(avaliacaoValue) : null;
 
-        const data = new Date().toLocaleString("pt-BR");
-        const inicial = nome.charAt(0).toUpperCase() || "?";
+        try {
+            const response = await fetch(`${apiBaseUrl}/api/comments`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    email,
+                    name: nome,
+                    comentario: msg,
+                    avaliacao
+                })
+            });
 
-        comentario.innerHTML = `
-            <div class="comentario-avatar" aria-hidden="true">${inicial}</div>
-            <div class="comentario-body">
-                <p class="comentario-meta"><strong>${nome}</strong> (${email}) - ${data}</p>
-                <p>${msg}</p>
-            </div>
-        `;
+            if (!response.ok) {
+                const errorData = await response.json().catch(() => ({}));
+                throw new Error(errorData.error || 'Falha ao salvar comentário no servidor.');
+            }
 
-        comentariosList.prepend(comentario);
-        sucessoMsg.style.display = 'block';
-        form.reset();
-        setTimeout(() => {
-            sucessoMsg.style.display = 'none';
-        }, 3000);
+            const savedComment = await response.json();
+            renderizarComentario(savedComment);
+            sucessoMsg.style.display = 'block';
+            form.reset();
+            setTimeout(() => {
+                sucessoMsg.style.display = 'none';
+            }, 3000);
+        } catch (error) {
+            alert(error.message || 'Não foi possível salvar o comentário.');
+        }
     });
 }
 
