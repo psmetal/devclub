@@ -8,6 +8,17 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 export default async function handler(req, res) {
+  // CORS headers
+  res.setHeader('Access-Control-Allow-Credentials', 'true');
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET,POST,OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
+  // Handle OPTIONS request
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end();
+  }
+
   if (req.method === 'GET') {
     try {
       const comments = await prisma.comment.findMany({
@@ -16,7 +27,7 @@ export default async function handler(req, res) {
       return res.status(200).json(comments);
     } catch (error) {
       console.error('Erro ao buscar comentarios:', error);
-      return res.status(500).json({ error: 'Erro ao buscar comentarios' });
+      return res.status(500).json({ error: 'Erro ao buscar comentarios', details: error.message });
     }
   }
 
@@ -40,7 +51,7 @@ export default async function handler(req, res) {
       return res.status(201).json(newComment);
     } catch (error) {
       console.error('Erro ao salvar comentario:', error);
-      return res.status(500).json({ error: 'Erro ao salvar comentario' });
+      return res.status(500).json({ error: 'Erro ao salvar comentario', details: error.message });
     }
   }
 

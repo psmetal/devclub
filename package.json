@@ -5,7 +5,8 @@
   "main": "scripts.js",
   "scripts": {
     "dev": "node --watch server.js",
-    "build": "prisma generate"
+    "build": "prisma generate",
+    "postinstall": "prisma generate"
   },
   "repository": {
     "type": "git",
