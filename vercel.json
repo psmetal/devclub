@@ -1,0 +1,10 @@
+{
+  "buildCommand": "npx prisma generate",
+  "installCommand": "npm install",
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/api/$1"
+    }
+  ]
+}
