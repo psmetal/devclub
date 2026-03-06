@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Animes</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+    <header class="cabecalho">
+        <h1>psanimes</h1>
+        <h2>Lista Completa de Animes</h2>
+        
+        <nav class="link">
+            <ul>
+                <li><a href="../index.html">Início</a></li>
+                <li><a href="../index.html#about">Sobre</a></li>
+                <li><a href="../pages/contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="principal-content">
+            <section class="apresentation">
+                <h2>Mais Animes</h2>
+                <p>Confira nossa lista completa de animes disponíveis para assistir.</p>
+                <div class="search-container">
+                    <input  class="search-input" type="search" placeholder="Pesquisar animes ">
+                    <button class="search-btn" onclick="pesquisarAnime()">Pesquisar</button>
+                </div>
+            </section>
+
+            <section class="card">
+            
+               <div class="card1" onclick="abrirAnime('one_piece')">
+                    <img src="../assets/one_piece.jpg" alt="One Piece" class="anime-image">
+                    <span class="ano-title">1999</span>
+                    <h3>One Piece</h3>
+               </div>
+
+               <div class="card1" onclick="abrirAnime('rurouni_kenshin')">
+                    <img src="../assets/rurouni_kenshin.webp" alt="Rurouni Kenshin" class="anime-image">
+                        <span class="ano-title">2023</span>
+                    
+                    <h3>Rurouni Kenshin</h3>
+               </div>
+
+                <div class="card1" onclick="abrirAnime('sakamoto_days')">
+                    <img src="../assets/sakamoto_days.webp" alt="Sakamoto Days" class="anime-image">
+                        <span class="ano-title">2025</span>
+                    <h3>Sakamoto Days</h3>
+                </div>
+
+                <div class="card1" onclick="abrirAnime('dr_stone')">
+                    <img src="../assets/dr_stone.webp" alt="Dr. Stone" class="anime-image">
+                        <span class="ano-title">2024</span>
+                    <h3>Dr. Stone</h3>
+
+                    
+                </div>
+                <div class="card1" onclick="abrirAnime('dota_dragons_blood')">
+                    <img src="../assets/dota_dragons_blood.webp" alt="Dota Dragons Blood" class="anime-image">
+                        <span class="ano-title">2021</span>
+                    <h3>Dota Dragons Blood</h3>                
+                </div>
+                
+                <div class="card1" onclick="abrirAnime('the_king_avatar')">
+                    <img src="../assets/the_king_avatar.webp" alt="The King Avatar" class="anime-image">
+                        <span class="ano-title">2017</span>
+                    <h3>The King Avatar</h3>
+                </div>
+                
+                <div class="card1" onclick="abrirAnime('chainsaw_man')">
+                    <img src="../assets/Chainsaw_Man.webp" alt="Chainsaw Man" class="anime-image">
+                        <span class="ano-title">2022</span>
+                    <h3>Chainsaw Man</h3>
+                </div>
+
+                <div class="card1" onclick="abrirAnime('cyberpunk')">
+                    <img src="../assets/cyberpunk.webp" alt="Cyberpunk" class="anime-image">
+                        <span class="ano-title">2003</span>
+                    <h3>Cyberpunk</h3>
+                </div>
+
+                <div class="card1" onclick="abrirAnime('attack_on_titan')">
+                    <img src="../assets/attack_on_titan.webp" alt="Attack on Titan" class="anime-image">
+                        <span class="ano-title">2013</span>
+                    <h3>Attack on Titan</h3>
+                </div>
+
+                <div class="card1" onclick="abrirAnime('arifureta')">
+                    <img src="../assets/arifureta.webp" alt="Arifureta" class="anime-image">
+                        <span class="ano-title">2019</span>
+                    <h3>Arifureta</h3>
+                </div>
+
+                
+
+            </section>
+
+            <nav class="pagination">
+                <ul>
+                    <li><a href="../index.html">Anterior</a></li>
+                    <li><a href="../index.html">1</a></li>
+                    <li class="is-active"><a href="page2.html">2</a></li>
+                    <li class="dots"><span>...</span></li>
+                    <li class="is-disabled"><span>Próxima</span></li>
+                </ul>
+            </nav>
+        </div>
+    </main>
+
+    <script src="../scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>psvidio</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+    <a  href="../index.html" class="btn-voltar">⬅ Voltar para Home</a>
+
+    <h1>assista aqui</h1>
+    <p class="text">Em breve, seu anime irá começar</p>
+     <iframe id="player" width="80%" height="500" frameborder="0" allowfullscreen></iframe>
+     <section id="comentarios">
+    <h2 class="coment_h2">Deixe seu comentário</h2>
+
+    <form id="formComentario">
+    <!-- Nome -->
+    <label for="nome">Nome:</label>
+    <input
+      type="text"
+      id="nome"
+      name="nome"
+      placeholder="Seu nome"
+      required
+    />
+
+    <!-- Email -->
+    <label for="email">E-mail (não será publicado):</label>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      placeholder="seu@email.com"
+      required
+    />
+
+    <!-- Comentário -->
+    <label for="mensagem">Comentário:</label>
+    <textarea
+      id="mensagem"
+      name="mensagem"
+      rows="4"
+      placeholder="Escreva aqui..."
+      required
+    ></textarea>
+
+    <!-- Avaliação (opcional) -->
+    <label for="avaliacao">Avaliação do anime:</label>
+    <select id="avaliacao" name="avaliacao">
+      <option value="">Selecione</option>
+      <option value="5">⭐️⭐️⭐️⭐️⭐️</option>
+      <option value="4">⭐️⭐️⭐️⭐️</option>
+      <option value="3">⭐️⭐️⭐️</option>
+      <option value="2">⭐️⭐️</option>
+      <option value="1">⭐️</option>
+    </select>
+
+    <!-- Botão -->
+    <button type="submit">Enviar Comentário</button>
+  </form>
+
+  <!-- Mensagem de sucesso -->
+  <p id="sucessoMsg" style="display:none; color:green; margin-top:10px;">
+    👍 Comentário enviado com sucesso!
+  </p>
+</section>
+
+    
+    <script src="../scripts.js"></script>
+</body>
+</html>
