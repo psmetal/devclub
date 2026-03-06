@@ -115,9 +115,7 @@ if (searchInput) {
 const form = document.getElementById('formComentario');
 const sucessoMsg = document.getElementById('sucessoMsg');
 const comentariosSection = document.getElementById('comentarios');
-const apiBaseUrl = window.location.port && window.location.port !== '3000'
-    ? 'http://localhost:3000'
-    : '';
+const commentsEndpoint = '/api/comments';
 
 if (form && sucessoMsg && comentariosSection) {
     let comentariosList = document.getElementById('comentarios-list');
@@ -154,7 +152,7 @@ if (form && sucessoMsg && comentariosSection) {
 
     async function carregarComentarios() {
         try {
-            const response = await fetch(`${apiBaseUrl}/api/comments`);
+            const response = await fetch(commentsEndpoint);
             if (!response.ok) {
                 return;
             }
@@ -186,7 +184,7 @@ if (form && sucessoMsg && comentariosSection) {
         const avaliacao = avaliacaoValue ? Number(avaliacaoValue) : null;
 
         try {
-            const response = await fetch(`${apiBaseUrl}/api/comments`, {
+            const response = await fetch(commentsEndpoint, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
